@@ -13,6 +13,9 @@ public class ThrowerController : MonoBehaviour
     [SerializeField, Tooltip("Length of cooldown between throws (sec)")]
     public float throwCooldown = 0.5f;
 
+    [SerializeField, Tooltip("Speed of rotation of the throwable")]
+    public float rotationSpeed = 5f;
+
     private bool _canThrow = true;
     private List<Collider2D> _throwableColliders = new List<Collider2D>();
     private GameObject _throwableInstance;
@@ -24,6 +27,15 @@ public class ThrowerController : MonoBehaviour
 
     public void Update()
     {
+        // Rotate throwable
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0f)
+        {
+            // Adjust rotation based on scroll wheel input
+            float rotationAmount = scrollInput * rotationSpeed; // Adjust rotation speed as needed
+            _throwableInstance.transform.Rotate(Vector3.forward, rotationAmount);
+        }
+
         // If throwable is not thrown, follow player
         if (_throwableInstance != null && _canThrow)
         {

@@ -513,6 +513,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
+      propertyPath: rotationSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: throwables.Array.size
       value: 5
       objectReference: {fileID: 0}
