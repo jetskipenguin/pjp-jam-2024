@@ -80,8 +80,11 @@ public class ThrowerController : MonoBehaviour
 
         // Instantiate the throwable
         _throwableInstance = Instantiate(selectedThrowable, transform.position, Quaternion.identity);
+
+        // Check if the throwable has a collider
         _throwableColliders = new List<Collider2D> { _throwableInstance.GetComponent<Collider2D>() };
 
+        // If not, check for children colliders
         if (!_throwableColliders[0])
         {
             var colliders = _throwableInstance.GetComponentsInChildren<Collider2D>();
