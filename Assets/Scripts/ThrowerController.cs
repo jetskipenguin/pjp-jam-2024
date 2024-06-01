@@ -40,12 +40,12 @@ public class ThrowerController : MonoBehaviour
             rb.velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed;
             Debug.Log("Applying Velocity to Throwable: " + rb.velocity);
 
-            StartCoroutine(TurnOnColliderOnceOutsideOfPlayer());
+            StartCoroutine(TurnOnColliderOnceOutsideOfThrower());
             StartCoroutine(ThrowCooldown());
         }
     }
 
-    private IEnumerator TurnOnColliderOnceOutsideOfPlayer()
+    private IEnumerator TurnOnColliderOnceOutsideOfThrower()
     {
         // Wait until the throwable is outside the thrower's transform to turn on collider
         while (Vector3.Distance(_throwableInstance.transform.position, transform.position) < 0.1f)
