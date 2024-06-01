@@ -14,7 +14,7 @@ public class ThrowerController : MonoBehaviour
     public float throwCooldown = 0.5f;
 
     private bool _canThrow = true;
-    private Collider2D _throwableCollider;
+    private List<Collider2D> _throwableColliders = new List<Collider2D>();
     private GameObject _throwableInstance;
 
     public void OnEnable()
@@ -54,7 +54,10 @@ public class ThrowerController : MonoBehaviour
         }
 
         // Once outside, enable the collider
-        _throwableCollider.enabled = true;
+        foreach (Collider2D collider in _throwableColliders)
+        {
+            collider.enabled = true;
+        }
     }
 
     private IEnumerator ThrowCooldown()
@@ -77,7 +80,17 @@ public class ThrowerController : MonoBehaviour
 
         // Instantiate the throwable
         _throwableInstance = Instantiate(selectedThrowable, transform.position, Quaternion.identity);
-        _throwableCollider = _throwableInstance.GetComponent<Collider2D>();
-        _throwableCollider.enabled = false;
+        _throwableColliders = new List<Collider2D> { _throwableInstance.GetComponent<Collider2D>() };
+
+        if (!_throwableColliders[0])
+        {
+            var colliders = _throwableInstance.GetComponentsInChildren<Collider2D>();
+            _throwableColliders = new List<Collider2D>(colliders);
+        }
+        
+        foreach (Collider2D collider in _throwableColliders)
+        {
+            collider.enabled = false;
+        }
     }
 }
