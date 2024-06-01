@@ -192,5 +192,7 @@ MonoBehaviour:
   throwables:
   - {fileID: 468001748565360069, guid: 00b39105877ead640a14c546693a2e57, type: 3}
   - {fileID: 6458918552676648159, guid: 83fea0d6496cd8646806f64e446a0e03, type: 3}
+  - {fileID: 9017804886367543563, guid: 018778cbb26c6ba4c9d31f81263a7b07, type: 3}
+  - {fileID: 6347076156753207529, guid: 4c27d2ee5350286488b66699d50f13d4, type: 3}
   throwSpeed: 10
   throwCooldown: 0.5
