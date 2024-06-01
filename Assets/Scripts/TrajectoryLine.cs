@@ -5,9 +5,6 @@ using UnityEngine;
 // A large part of the code in this script is taken from the following source: https://www.youtube.com/watch?v=RpeRnlLgmv8&ab_channel=MuddyWolf
 public class TrajectoryLine : MonoBehaviour
 {
-    [Header("Monobehavior References")]
-    [SerializeField] private ThrowerController _throwerController;
-
     [Header("Trajectory Line Settings")]
     [SerializeField, Tooltip("Smoothness of the line")]
     private int _segmentCount = 100;
@@ -26,7 +23,7 @@ public class TrajectoryLine : MonoBehaviour
 
     public void PlotTrajectoryLine(Rigidbody2D rigidbody, Vector2 pos, float throwSpeed)
     {
-        Vector2 velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed;
+        Vector2 velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed * 2f;
 
         Vector2[] trajectory = CalculateTrajectoryLine(rigidbody, pos, velocity, _segmentCount);
         

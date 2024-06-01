@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4881144769054113880, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4881144769054113880, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_Parameters.widthMultiplier
@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4881144769054113880, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4881144769054113880, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
