@@ -519,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: throwables.Array.data[0]
       value: 
-      objectReference: {fileID: 1421139704485703019, guid: fc4938bfd479ea54a8c6cdb32a81d095, type: 3}
+      objectReference: {fileID: 468001748565360069, guid: 00b39105877ead640a14c546693a2e57, type: 3}
     - target: {fileID: 4580302692963875801, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -564,9 +564,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5708515903071911442, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6944672753942204409, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041876530584341411, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
