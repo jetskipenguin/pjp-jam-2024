@@ -27,12 +27,11 @@ public class ThrowerController : MonoBehaviour
 
     public void Update()
     {
-        RotateThrowableOnInput();
-
         // If throwable is not thrown, follow player
         if (_throwableInstance != null && _canThrow)
         {
             _throwableInstance.transform.position = transform.position; // TODO: add offset for player hands
+            RotateThrowableOnInput();
         }
 
         // Throw the throwable
@@ -63,7 +62,7 @@ public class ThrowerController : MonoBehaviour
             _throwableInstance.transform.Rotate(Vector3.forward, rotationAmount);
         }
 
-         // Use Q and E as alternative input
+        // Use Q and E as alternative input
         if (Input.GetKeyUp(KeyCode.Q))
         {
             _throwableInstance.transform.Rotate(Vector3.forward, 45);
