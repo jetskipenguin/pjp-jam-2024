@@ -27,14 +27,7 @@ public class ThrowerController : MonoBehaviour
 
     public void Update()
     {
-        // Rotate throwable
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollInput != 0f)
-        {
-            // Adjust rotation based on scroll wheel input
-            float rotationAmount = scrollInput * rotationSpeed; // Adjust rotation speed as needed
-            _throwableInstance.transform.Rotate(Vector3.forward, rotationAmount);
-        }
+        RotateThrowableOnInput();
 
         // If throwable is not thrown, follow player
         if (_throwableInstance != null && _canThrow)
@@ -54,6 +47,30 @@ public class ThrowerController : MonoBehaviour
 
             StartCoroutine(TurnOnColliderOnceOutsideOfThrower());
             StartCoroutine(ThrowCooldown());
+        }
+    }
+
+    private void RotateThrowableOnInput()
+    {
+        // Rotate throwable
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel"); 
+        if (scrollInput != 0f)
+        {
+            Debug.Log("Scroll Input: " + scrollInput);
+
+            // Adjust rotation based on scroll wheel input
+            float rotationAmount = scrollInput * rotationSpeed; // Adjust rotation speed as needed
+            _throwableInstance.transform.Rotate(Vector3.forward, rotationAmount);
+        }
+
+         // Use Q and E as alternative input
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            _throwableInstance.transform.Rotate(Vector3.forward, 45);
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            _throwableInstance.transform.Rotate(Vector3.forward, -45);
         }
     }
 
