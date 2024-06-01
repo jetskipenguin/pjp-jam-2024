@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ThrowerController : MonoBehaviour
 {
+    [Header("MonoBehavior References")]
+    [SerializeField, Tooltip("Reference to the TrajectoryLine script")]
+    private TrajectoryLine _trajectoryLine;
+
+    [Header("Thrower Settings")]
     [SerializeField, Tooltip("List of objects that can be thrown")]
     public List<GameObject> throwables = new List<GameObject>();
 
@@ -19,6 +24,7 @@ public class ThrowerController : MonoBehaviour
     private bool _canThrow = true;
     private List<Collider2D> _throwableColliders = new List<Collider2D>();
     private GameObject _throwableInstance;
+    private Rigidbody2D _throwableRigidbody;
 
     public void OnEnable()
     {
@@ -32,17 +38,18 @@ public class ThrowerController : MonoBehaviour
         {
             _throwableInstance.transform.position = transform.position; // TODO: add offset for player hands
             RotateThrowableOnInput();
+            _trajectoryLine.PlotTrajectoryLine(_throwableRigidbody, _throwableInstance.transform.position, throwSpeed);
         }
 
         // Throw the throwable
         if (Input.GetButtonDown("Throw") && _canThrow)
         {
             _canThrow = false;
-            Rigidbody2D rb = _throwableInstance.GetComponent<Rigidbody2D>();
+            _trajectoryLine.ClearTrajectoryLine();
 
             // Throw the throwable in the direction of the players mouse
-            rb.velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed;
-            Debug.Log("Applying Velocity to Throwable: " + rb.velocity);
+            _throwableRigidbody.velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed;
+            Debug.Log("Applying Velocity to Throwable: " + _throwableRigidbody.velocity);
 
             StartCoroutine(TurnOnColliderOnceOutsideOfThrower());
             StartCoroutine(ThrowCooldown());
@@ -106,6 +113,7 @@ public class ThrowerController : MonoBehaviour
 
         // Instantiate the throwable
         _throwableInstance = Instantiate(selectedThrowable, transform.position, Quaternion.identity);
+        _throwableRigidbody = _throwableInstance.GetComponent<Rigidbody2D>();
 
         // Check if the throwable has a collider
         _throwableColliders = new List<Collider2D>();
