@@ -55,8 +55,6 @@ public class ThrowerController : MonoBehaviour
         float scrollInput = Input.GetAxis("Mouse ScrollWheel"); 
         if (scrollInput != 0f)
         {
-            Debug.Log("Scroll Input: " + scrollInput);
-
             // Adjust rotation based on scroll wheel input
             float rotationAmount = scrollInput * rotationSpeed; // Adjust rotation speed as needed
             _throwableInstance.transform.Rotate(Vector3.forward, rotationAmount);
