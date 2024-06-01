@@ -514,12 +514,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: throwables.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: throwables.Array.data[0]
       value: 
       objectReference: {fileID: 468001748565360069, guid: 00b39105877ead640a14c546693a2e57, type: 3}
+    - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
+      propertyPath: throwables.Array.data[1]
+      value: 
+      objectReference: {fileID: 6458918552676648159, guid: 83fea0d6496cd8646806f64e446a0e03, type: 3}
     - target: {fileID: 4580302692963875801, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_RootOrder
       value: 2

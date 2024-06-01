@@ -189,5 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d45e10723dec140ac7c1b817a3838b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwables: []
+  throwables:
+  - {fileID: 468001748565360069, guid: 00b39105877ead640a14c546693a2e57, type: 3}
+  - {fileID: 6458918552676648159, guid: 83fea0d6496cd8646806f64e446a0e03, type: 3}
   throwSpeed: 10
+  throwCooldown: 0.5
