@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &181694578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2641875472032303545, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-  m_PrefabInstance: {fileID: 1453617021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267687818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4767657673407727690, guid: 030b2887aca1a9e4ea86bcd65a29ff36, type: 3}
@@ -368,11 +363,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &903806939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3884552060244002989, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-  m_PrefabInstance: {fileID: 1453617021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1032055803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,11 +432,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b39105877ead640a14c546693a2e57, type: 3}
---- !u!1 &1192499376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8648216387113000653, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-  m_PrefabInstance: {fileID: 1453617021}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200792387
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,18 +738,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-      propertyPath: leftHand
-      value: 
-      objectReference: {fileID: 181694578}
-    - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-      propertyPath: rightHand
-      value: 
-      objectReference: {fileID: 1192499376}
-    - target: {fileID: 4278898032984850033, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
-      propertyPath: animatedHands
-      value: 
-      objectReference: {fileID: 903806939}
     - target: {fileID: 4580302692963875801, guid: bb68e401194b5834fb0743c36e13ae3a, type: 3}
       propertyPath: m_RootOrder
       value: 1

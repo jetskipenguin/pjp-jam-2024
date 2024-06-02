@@ -439,7 +439,7 @@ Transform:
   - {fileID: 8460972323340623370}
   - {fileID: 7414410425189360759}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5708515903071911442
 Rigidbody2D:
@@ -542,6 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d45e10723dec140ac7c1b817a3838b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatedHands: {fileID: 3884552060244002989}
+  leftHand: {fileID: 2641875472032303545}
+  rightHand: {fileID: 8648216387113000653}
   _trajectoryLine: {fileID: 2770729334863879015}
   throwables:
   - {fileID: 468001748565360069, guid: 00b39105877ead640a14c546693a2e57, type: 3}
