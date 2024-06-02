@@ -8,17 +8,12 @@ public class TrajectoryLine : MonoBehaviour
     [Header("Trajectory Line Settings")]
     [SerializeField, Tooltip("Smoothness of the line")]
     private int _segmentCount = 100;
-    
-    [SerializeField, Tooltip("Color of the line")]
-    private Color _lineColor = Color.white;
 
     private LineRenderer _lineRenderer;
 
     private void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.startColor = _lineColor;
-        _lineRenderer.endColor = _lineColor;
     }
 
     public void PlotTrajectoryLine(Rigidbody2D rigidbody, Vector2 pos, float throwSpeed)
