@@ -26,6 +26,7 @@ public class ThrowerController : MonoBehaviour
     [SerializeField, Tooltip("Speed of rotation of the throwable")]
     public float rotationSpeed = 5f;
 
+    private Collider2D _playerCollider;
     private bool _canThrow = true;
     private List<Collider2D> _throwableColliders = new List<Collider2D>();
     private GameObject _throwableInstance;
@@ -33,6 +34,7 @@ public class ThrowerController : MonoBehaviour
 
     public void OnEnable()
     {
+        _playerCollider = GetComponent<Collider2D>();
         initializeThrowable();
     }
 
@@ -88,7 +90,7 @@ public class ThrowerController : MonoBehaviour
     private IEnumerator TurnOnColliderOnceOutsideOfThrower()
     {
         // Wait until the throwable is outside the thrower's transform to turn on collider
-        while (Vector3.Distance(_throwableInstance.transform.position, transform.position) < 0.1f)
+        while (AreAnyCollidersIntersecting(_throwableColliders, _playerCollider))
         {
             yield return null;
         }
@@ -98,6 +100,19 @@ public class ThrowerController : MonoBehaviour
         {
             collider.enabled = true;
         }
+    }
+
+    // Function to check if a collider is completely outside another collider's bounds
+    private bool AreAnyCollidersIntersecting(List<Collider2D> colliders, Collider2D targetCollider)
+    {
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.bounds.Intersects(targetCollider.bounds))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private IEnumerator ThrowCooldown()
