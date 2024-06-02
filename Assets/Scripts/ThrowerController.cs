@@ -17,6 +17,13 @@ public class ThrowerController : MonoBehaviour
     [SerializeField, Tooltip("List of objects that can be thrown")]
     public List<GameObject> throwables = new List<GameObject>();
 
+    [SerializeField, Tooltip("List of objects are less likely to be selected")]
+    public List<GameObject> lessLikelyThrowables = new List<GameObject>();
+
+    [SerializeField, Tooltip("Chance of getting a less likely throwable")]
+    [Range(0, 1)]
+    public float lessLikelyChance = 0.1f;
+
     [SerializeField, Tooltip("Speed of the throw")]
     public float throwSpeed = 10f;
 
@@ -130,8 +137,16 @@ public class ThrowerController : MonoBehaviour
             return;
         }
 
-        // Random throwable
-        GameObject selectedThrowable = throwables[Random.Range(0, throwables.Count)];
+        GameObject selectedThrowable;
+        float randomValue = Random.Range(0f, 1f);
+        if (randomValue < lessLikelyChance)
+        {
+            selectedThrowable = lessLikelyThrowables[Random.Range(0, lessLikelyThrowables.Count)];
+        }
+        else
+        {
+            selectedThrowable = throwables[Random.Range(0, throwables.Count)];
+        }
 
         // Instantiate the throwable
         _throwableInstance = Instantiate(selectedThrowable, transform.position, Quaternion.identity);
