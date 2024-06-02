@@ -353,7 +353,7 @@ Transform:
   - {fileID: 1190219525585060764}
   - {fileID: 3113820968178858797}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5708515903071911442
 Rigidbody2D:
@@ -463,6 +463,11 @@ MonoBehaviour:
   - {fileID: 9017804886367543563, guid: 018778cbb26c6ba4c9d31f81263a7b07, type: 3}
   - {fileID: 6347076156753207529, guid: 4c27d2ee5350286488b66699d50f13d4, type: 3}
   - {fileID: 7872928528839094229, guid: 27b66eb9867a28e43a0ee5b657ecbefc, type: 3}
+  - {fileID: 6719663867582453449, guid: 788cbb11ec9aefa40bd9064d2e7c2697, type: 3}
+  - {fileID: 7987237904303686935, guid: 2e35ede4d57e9db438d0ea12e06fe1e6, type: 3}
+  - {fileID: 3373321629566536039, guid: 689f334f8970dc240baafd7fd00a10a9, type: 3}
+  - {fileID: 2129770371902567713, guid: 9a67fdc05926614429b2ba918a132e63, type: 3}
+  - {fileID: 3661045614397199780, guid: 8e24be49401cd0341bf1d39fa7f8a2b4, type: 3}
   throwSpeed: 10
   throwCooldown: 0.5
   rotationSpeed: 125
