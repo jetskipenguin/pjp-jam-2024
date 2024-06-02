@@ -18,7 +18,7 @@ public class TrajectoryLine : MonoBehaviour
 
     public void PlotTrajectoryLine(Rigidbody2D rigidbody, Vector2 pos, float throwSpeed)
     {
-        Vector2 velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed * 2f;
+        Vector2 velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized * throwSpeed * 3f;
 
         Vector2[] trajectory = CalculateTrajectoryLine(rigidbody, pos, velocity, _segmentCount);
         
