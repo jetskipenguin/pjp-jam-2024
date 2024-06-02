@@ -21,6 +21,7 @@ public class CharacterController2D : MonoBehaviour
     private BoxCollider2D boxCollider;
 
     private Vector2 velocity;
+    private Animator animator;
 
     /// <summary>
     /// Set to true when the character intersects a collider beneath
@@ -31,6 +32,7 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {      
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -67,6 +69,11 @@ public class CharacterController2D : MonoBehaviour
 
         grounded = false;
 
+        //Update Animator Values
+        animator.SetFloat("xVel", velocity.x);
+        animator.SetFloat("yVel", velocity.y);
+        animator.SetBool("Grounded", grounded);
+        Debug.Log(grounded);
         // Retrieve all colliders we have intersected after velocity has been applied.
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 
