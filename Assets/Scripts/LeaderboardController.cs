@@ -52,6 +52,7 @@ public class LeaderboardController : MonoBehaviour
 
     private void OnEnable() 
     { 
+        Debug.Log("LeaderboardController enabled");
         _gameOverChannelSO.GameOverEvent += IsLeaderboardScore; 
         _leaderboardChannelSO.GetLeaderboardEntriesEvent += GetLeaderboardEntries;
         _leaderboardChannelSO.ChangePlayerNameEvent += ChangePlayerName;
@@ -59,6 +60,7 @@ public class LeaderboardController : MonoBehaviour
 
     private void OnDisable() 
     { 
+        Debug.Log("LeaderboardController disabled");
         _gameOverChannelSO.GameOverEvent -= IsLeaderboardScore;
         _leaderboardChannelSO.GetLeaderboardEntriesEvent -= GetLeaderboardEntries;
         _leaderboardChannelSO.ChangePlayerNameEvent -= ChangePlayerName;
@@ -97,7 +99,7 @@ public class LeaderboardController : MonoBehaviour
     // gets id from scene name (scene name with underscores instead of spaces)
     private String GetLeaderboardId()
     {
-        String sceneName = "Main_Level_Leaderboard";
+        String sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName.Replace(" ", "_"));
         return sceneName.Replace(" ", "_");
     }

@@ -19,6 +19,7 @@ public class LeaderboardChannelSO : ScriptableObject
 
     public async Task<LeaderboardEntry[]> GetLeaderboardEntries()
     {
+        Debug.Log(GetLeaderboardEntriesEvent == null ? "GetLeaderboardEntriesEvent is null" : "GetLeaderboardEntriesEvent is not null");
         var result = await GetLeaderboardEntriesEvent?.Invoke();
         return result.ToArray();
     }
