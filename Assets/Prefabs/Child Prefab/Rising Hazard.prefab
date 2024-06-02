@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _riseSpeed: 0.01
+  _gameOver: {fileID: 11400000, guid: 05983c760e52faf4fb6de1f6fe5624e8, type: 2}
