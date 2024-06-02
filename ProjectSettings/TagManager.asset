@@ -47,3 +47,6 @@ TagManager:
   - name: Player
     uniqueID: 3032903101
     locked: 0
+  - name: Rising Hazard
+    uniqueID: 2368953535
+    locked: 0
