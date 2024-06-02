@@ -594,7 +594,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4767657673407727689, guid: 030b2887aca1a9e4ea86bcd65a29ff36, type: 3}
       propertyPath: orthographic size
-      value: 4.1430655
+      value: 4.1096463
       objectReference: {fileID: 0}
     - target: {fileID: 4767657673407727690, guid: 030b2887aca1a9e4ea86bcd65a29ff36, type: 3}
       propertyPath: m_Name
@@ -652,6 +652,10 @@ PrefabInstance:
       propertyPath: _background
       value: 
       objectReference: {fileID: 1970880737}
+    - target: {fileID: 4767657673407727799, guid: 030b2887aca1a9e4ea86bcd65a29ff36, type: 3}
+      propertyPath: verticalOffset
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -26,11 +26,15 @@ public class CameraMovement : MonoBehaviour
 
     [Tooltip("Sprite in that the camera will never go outside of the bounds of")]
     [SerializeField] private SpriteRenderer _background;
+
+    [Tooltip("Vertical offset of the camera from the player position")]
+    [SerializeField] private float verticalOffset = 2.5f;
     
     void Awake()
     {
         _camera = GetComponent<Camera>();
         _player = GameObject.FindGameObjectWithTag("Player");
+
         _backgroundBounds = _background.bounds;
         
         _cameraHeight = _camera.orthographicSize;
@@ -51,7 +55,7 @@ public class CameraMovement : MonoBehaviour
 
 	void Update()
     {
-        _targetPosition = _player.transform.position + new Vector3(0, 0, -10);
+        _targetPosition = _player.transform.position + new Vector3(0, -verticalOffset, -10);
         _targetPosition = GetCameraBounds();
         transform.position = Vector3.SmoothDamp(transform.position, _targetPosition, ref _velocity, smoothTime);
     }
