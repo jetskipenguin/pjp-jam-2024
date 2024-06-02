@@ -10,10 +10,16 @@ public class RisingHazardController : MonoBehaviour
     [Header("Asset References")]
     [SerializeField] private GameOverChannelSO _gameOver;
 
+    private bool _gameOverTriggered = false;
+
+
 	private void FixedUpdate()
     {
         // Continuously move the hazard upwards
-        transform.position += Vector3.up * _riseSpeed;
+        if(!_gameOverTriggered)
+        {
+            transform.position += Vector3.up * _riseSpeed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,5 +35,6 @@ public class RisingHazardController : MonoBehaviour
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         player.GetComponent<Collider2D>().enabled = false;  
         _gameOver.RaiseEvent();
+        _gameOverTriggered = true;
     }
 }
