@@ -33,7 +33,7 @@ AnimationClip:
     - time: 0.41666666
       value: {fileID: 726603509, guid: 983f09474f917364cb54b5f988f8250b, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Player Body
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -52,7 +52,7 @@ AnimationClip:
     - time: 0.41666666
       value: {fileID: 504999719, guid: f490126c1e43c3842ad299381004be99, type: 3}
     attribute: m_Sprite
-    path: Animation Hands
+    path: Player Hands
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -64,7 +64,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 614337654
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -73,7 +73,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4128633878
+      path: 4208460630
       attribute: 0
       script: {fileID: 0}
       typeID: 212
