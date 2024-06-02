@@ -74,7 +74,6 @@ public class CharacterController2D : MonoBehaviour
 
         grounded = false;
 
-        Debug.Log(grounded);
         // Retrieve all colliders we have intersected after velocity has been applied.
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ThrowerController : MonoBehaviour
 {
+    [Header("Hand References")]
+    [SerializeField] private GameObject animatedHands;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
+    
     [Header("MonoBehavior References")]
     [SerializeField, Tooltip("Reference to the TrajectoryLine script")]
     private TrajectoryLine _trajectoryLine;
@@ -54,6 +59,8 @@ public class ThrowerController : MonoBehaviour
             StartCoroutine(TurnOnColliderOnceOutsideOfThrower());
             StartCoroutine(ThrowCooldown());
         }
+
+        updateHands();
     }
 
     private void RotateThrowableOnInput()
@@ -121,7 +128,7 @@ public class ThrowerController : MonoBehaviour
         Collider2D parentCollider = _throwableInstance.GetComponent<Collider2D>();
 
         // check if parent collider exists
-        if(parentCollider)
+        if(parentCollider && !parentCollider.isTrigger)
         {
             _throwableColliders.Add(parentCollider);
         }
@@ -136,5 +143,27 @@ public class ThrowerController : MonoBehaviour
         {
             collider.enabled = false;
         }
+
+        animatedHands.SetActive(false);
+    }
+
+    private void updateHands()
+    {
+        if (_throwableInstance == null || !_canThrow) {
+            animatedHands.SetActive(true);
+            leftHand.SetActive(false);
+            rightHand.SetActive(false);
+            return;
+        }
+
+		leftHand.SetActive(true);
+		rightHand.SetActive(true);
+
+		//Collider2D col = _throwableInstance.GetComponentInChildren<Collider2D>();
+        SpriteRenderer sprite = _throwableInstance.GetComponent<SpriteRenderer>();
+
+		rightHand.transform.position = new Vector2(sprite.bounds.min.x, sprite.bounds.center.y);
+		leftHand.transform.position = new Vector2(sprite.bounds.max.x, sprite.bounds.center.y);
+
     }
 }
