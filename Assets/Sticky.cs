@@ -12,8 +12,6 @@ public class Sticky : MonoBehaviour
         }
 		// creates joint
 		FixedJoint2D joint = collision.gameObject.AddComponent<FixedJoint2D>();
-		Debug.Log(collision.gameObject.name);
-		Debug.Log(collision.otherCollider.gameObject.name);
 
 		// sets joint position to point of contact
 		joint.anchor = collision.contacts[0].point;
