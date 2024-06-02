@@ -1221,6 +1221,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5874672806091725272, guid: abbc558e4b831aa4489f4b8d3f394b95, type: 3}
+      propertyPath: _riseSpeed
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6664716550326840939, guid: abbc558e4b831aa4489f4b8d3f394b95, type: 3}
       propertyPath: m_Name
       value: Cement
