@@ -67,12 +67,13 @@ public class CharacterController2D : MonoBehaviour
 
         transform.Translate(velocity * Time.deltaTime);
 
-        grounded = false;
-
         //Update Animator Values
-        animator.SetFloat("xVel", velocity.x);
+        animator.SetFloat("xVel", Mathf.Abs(velocity.x));
         animator.SetFloat("yVel", velocity.y);
         animator.SetBool("Grounded", grounded);
+
+        grounded = false;
+
         Debug.Log(grounded);
         // Retrieve all colliders we have intersected after velocity has been applied.
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
