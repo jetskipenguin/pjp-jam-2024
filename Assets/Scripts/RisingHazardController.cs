@@ -12,4 +12,13 @@ public class RisingHazardController : MonoBehaviour
         // Continuously move the hazard upwards
         transform.position += Vector3.up * _riseSpeed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            // TODO: gameover here
+            Destroy(collision.gameObject);
+        }
+    }
 }

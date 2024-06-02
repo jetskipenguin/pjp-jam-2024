@@ -895,6 +895,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1970880738}
     m_Modifications:
+    - target: {fileID: 3558176658898679170, guid: dd5238bde7adb624790d976cd85fac3b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6158703659339696836, guid: dd5238bde7adb624790d976cd85fac3b, type: 3}
       propertyPath: m_Name
       value: Rising Hazard
