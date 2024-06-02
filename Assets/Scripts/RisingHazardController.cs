@@ -7,7 +7,13 @@ public class RisingHazardController : MonoBehaviour
     [Header("Rising Hazard Settings")]
     [SerializeField] private float _riseSpeed = 1f;
 
-    private void FixedUpdate()
+    private GameObject gameOverUI;
+	private void Awake()
+	{
+        gameOverUI = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverUI.SetActive(false);
+	}
+	private void FixedUpdate()
     {
         // Continuously move the hazard upwards
         transform.position += Vector3.up * _riseSpeed;
@@ -18,7 +24,15 @@ public class RisingHazardController : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // TODO: gameover here
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            GameOver(collision.gameObject);
         }
+    }
+
+    private void GameOver(GameObject player)
+    {
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        player.GetComponent<Collider2D>().enabled = false;  
+        gameOverUI.SetActive(true);
     }
 }
